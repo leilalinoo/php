@@ -33,7 +33,41 @@
     $tomb2[1]= "phötsch";
 
     echo "<br>";
-    print_r($tomb2)
+    print_r($tomb2);
+    echo "<br>"; 
+
+
+    for ($i=0; $i < count($tomb2); $i++) { 
+        print_r($tomb2[$i]);
+        echo "<br>";
+    }
+
+    //var_dump($GLOBALS);
+    $x = 5;
+    $y = 10;
+
+    function myTest0(){
+        $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+    }
+
+    echo "<br>";
+    myTest0();
+    echo $y."<br>";
+
+
+    function MyTest(){
+        static $xx = 0;
+        echo "xx (static) értéke: $xx";
+        $xx++;
+    }
+
+    for ($i=0; $i < 5; $i++) { 
+        MyTest();
+        echo "<br>";
+    }
+
+
+
     ?>
 </body>
 </html>
